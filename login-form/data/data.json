@@ -1,0 +1,522 @@
+{
+  "men": [
+    {
+      "id": "M001",
+      "name": "Oxford Button-Down Shirt",
+      "type": "Formal",
+      "category": "Tops",
+      "description": "A clean and sharp Oxford shirt designed for office and formal wear. Breathable cotton keeps it comfortable for long hours.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": [
+        { "name": "White", "hex": "#FFFFFF" },
+        { "name": "Blue", "hex": "#4A7C9D" },
+        { "name": "Beige", "hex": "#E6D5B8" }
+      ],
+      "price": 42,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400"
+    },
+    {
+      "id": "M004",
+      "name": "Classic Polo Shirt",
+      "type": "Casual",
+      "category": "Tops",
+      "description": "A timeless polo shirt for daily casual wear. Soft fabric with a neat fit for a smart everyday look.",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "colors": [
+        { "name": "Navy", "hex": "#1C2C5E" },
+        { "name": "White", "hex": "#FFFFFF" },
+        { "name": "Red", "hex": "#C8102E" },
+        { "name": "Green", "hex": "#006400" }
+      ],
+      "price": 35,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=400"
+    },
+    {
+      "id": "M005",
+      "name": "Slim Denim Jeans",
+      "type": "Casual",
+      "category": "Bottoms",
+      "description": "Modern slim-fit jeans designed for comfort and style. Stretch denim allows easy movement throughout the day.",
+      "sizes": ["30", "32", "34", "36"],
+      "colors": [
+        { "name": "Denim", "hex": "#2C3E50" },
+        { "name": "Black", "hex": "#1A1A1A" },
+        { "name": "Gray", "hex": "#808080" }
+      ],
+      "price": 69,
+      "inStock": false,
+      "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400"
+    },
+    {
+      "id": "M006",
+      "name": "Running Sneakers",
+      "type": "Athletic",
+      "category": "Footwear",
+      "description": "Lightweight running sneakers built for performance. Cushioned sole supports running, walking, and gym use.",
+      "sizes": ["8", "9", "10", "11", "12"],
+      "colors": [
+        { "name": "White", "hex": "#FFFFFF" },
+        { "name": "Black", "hex": "#1A1A1A" },
+        { "name": "Blue", "hex": "#4A7C9D" }
+      ],
+      "price": 89,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400"
+    },
+    {
+      "id": "M007",
+      "name": "Wool Blazer",
+      "type": "Formal",
+      "category": "Outerwear",
+      "description": "Premium wool blazer designed for formal occasions. Sharp tailoring enhances professional appearance.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": [
+        { "name": "Charcoal", "hex": "#36454F" },
+        { "name": "Navy", "hex": "#1C2C5E" },
+        { "name": "Brown", "hex": "#8B4513" }
+      ],
+      "price": 145,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400"
+    },
+    {
+      "id": "M008",
+      "name": "Graphic Tee",
+      "type": "Casual",
+      "category": "Tops",
+      "description": "Casual graphic t-shirt with modern prints. Soft cotton fabric makes it perfect for daily streetwear style.",
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "colors": [
+        { "name": "White", "hex": "#FFFFFF" },
+        { "name": "Black", "hex": "#1A1A1A" },
+        { "name": "Gray", "hex": "#A9A9A9" }
+      ],
+      "price": 22,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400"
+    },
+    {
+      "id": "M009",
+      "name": "Cargo Shorts",
+      "type": "Casual",
+      "category": "Bottoms",
+      "description": "Functional cargo shorts with multiple pockets. Lightweight and breathable for everyday comfort.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": [
+        { "name": "Olive", "hex": "#556B2F" },
+        { "name": "Beige", "hex": "#D2B48C" },
+        { "name": "Gray", "hex": "#808080" }
+      ],
+      "price": 38,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1591195853828-11db35f65b7f?w=400"
+    },
+    {
+      "id": "M010",
+      "name": "Leather Derby Shoes",
+      "type": "Formal",
+      "category": "Footwear",
+      "description": "Elegant leather derby shoes for formal wear. Durable build with polished finish for premium look.",
+      "sizes": ["8", "9", "10", "11"],
+      "colors": [
+        { "name": "Black", "hex": "#1A1A1A" },
+        { "name": "Brown", "hex": "#8B4513" }
+      ],
+      "price": 110,
+      "inStock": false,
+      "image": "https://images.unsplash.com/photo-1614252369475-531eba8356a4?w=400"
+    },
+    {
+      "id": "M011",
+      "name": "Puffer Vest",
+      "type": "Outerwear",
+      "category": "Outerwear",
+      "description": "Warm puffer vest designed for layering. Lightweight insulation keeps you comfortable in cold weather.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": [
+        { "name": "Black", "hex": "#1A1A1A" },
+        { "name": "Navy", "hex": "#1C2C5E" },
+        { "name": "Olive", "hex": "#556B2F" }
+      ],
+      "price": 75,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1552374196-c4e7ffc2f6c8?w=400"
+    },
+    {
+      "id": "M012",
+      "name": "Leather Belt",
+      "type": "Casual",
+      "category": "Accessories",
+      "description": "Classic leather belt suitable for all outfits. Durable material with simple and clean design.",
+      "sizes": ["S", "M", "L"],
+      "colors": [
+        { "name": "Black", "hex": "#1A1A1A" },
+        { "name": "Brown", "hex": "#8B4513" }
+      ],
+      "price": 28,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400"
+    }
+  ],
+
+  "women": [
+    {
+      "id": "W001",
+      "name": "Floral Wrap Dress",
+      "type": "Casual",
+      "category": "Dresses",
+      "description": "Light and elegant floral wrap dress perfect for casual outings. Soft fabric gives a comfortable and stylish look.",
+      "sizes": ["XS", "S", "M", "L"],
+      "colors": [
+        { "name": "Pink", "hex": "#FFC1CC" },
+        { "name": "Yellow", "hex": "#FFD700" },
+        { "name": "White", "hex": "#FFFFFF" }
+      ],
+      "price": 58,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=400"
+    },
+    {
+      "id": "W002",
+      "name": "High-Rise Skinny Jeans",
+      "type": "Casual",
+      "category": "Bottoms",
+      "description": "Stylish high-rise skinny jeans with a flattering fit. Stretchable denim ensures comfort and flexibility.",
+      "sizes": ["24", "26", "28", "30", "32"],
+      "colors": [
+        { "name": "Denim", "hex": "#2C3E50" },
+        { "name": "Black", "hex": "#1A1A1A" },
+        { "name": "White", "hex": "#FFFFFF" }
+      ],
+      "price": 72,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1541099649105-f69ad21f864f?w=400"
+    },
+    {
+      "id": "W003",
+      "name": "Silk Blouse",
+      "type": "Formal",
+      "category": "Tops",
+      "description": "Elegant silk blouse designed for formal wear. Smooth texture gives a premium and classy appearance.",
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "colors": [
+        { "name": "Cream", "hex": "#F5EDE1" },
+        { "name": "Pink", "hex": "#FFC1CC" },
+        { "name": "Navy", "hex": "#1C2C5E" }
+      ],
+      "price": 85,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400"
+    },
+    {
+      "id": "W004",
+      "name": "Trench Coat",
+      "type": "Outerwear",
+      "category": "Outerwear",
+      "description": "Classic trench coat designed for elegance and warmth. Perfect outerwear for stylish layering.",
+      "sizes": ["S", "M", "L"],
+      "colors": [
+        { "name": "Beige", "hex": "#D2B48C" },
+        { "name": "Black", "hex": "#1A1A1A" }
+      ],
+      "price": 165,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1617112848920-9c0a5f4c0e4d?w=400"
+    },
+    {
+      "id": "W005",
+      "name": "Yoga Leggings",
+      "type": "Athletic",
+      "category": "Bottoms",
+      "description": "Flexible yoga leggings designed for workouts and daily comfort. Stretch fabric supports active movement.",
+      "sizes": ["XS", "S", "M", "L"],
+      "colors": [
+        { "name": "Black", "hex": "#1A1A1A" },
+        { "name": "Gray", "hex": "#A9A9A9" },
+        { "name": "Teal", "hex": "#008080" },
+        { "name": "Pink", "hex": "#FFC1CC" }
+      ],
+      "price": 48,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a9c?w=400"
+    },
+    {
+      "id": "W006",
+      "name": "Knit Cardigan",
+      "type": "Casual",
+      "category": "Tops",
+      "description": "Soft knit cardigan perfect for layering. Cozy and stylish for casual everyday wear.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": [
+        { "name": "Cream", "hex": "#F5EDE1" },
+        { "name": "Lavender", "hex": "#E6E6FA" },
+        { "name": "Mustard", "hex": "#E6B800" }
+      ],
+      "price": 62,
+      "inStock": false,
+      "image": "https://images.unsplash.com/photo-1622445275576-721325763afe?w=400"
+    },
+    {
+      "id": "W007",
+      "name": "Pleated Midi Skirt",
+      "type": "Formal",
+      "category": "Bottoms",
+      "description": "Elegant pleated midi skirt designed for formal and semi-formal occasions. Flowy design adds grace.",
+      "sizes": ["XS", "S", "M", "L"],
+      "colors": [
+        { "name": "Beige", "hex": "#D2B48C" },
+        { "name": "Navy", "hex": "#1C2C5E" },
+        { "name": "Olive", "hex": "#556B2F" }
+      ],
+      "price": 55,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1585487000160-6eb1ad8c4f5d?w=400"
+    },
+    {
+      "id": "W008",
+      "name": "Block Heel Ankle Boots",
+      "type": "Formal",
+      "category": "Footwear",
+      "description": "Stylish ankle boots with block heels for comfort and elegance. Perfect for formal outfits.",
+      "sizes": ["5", "6", "7", "8", "9"],
+      "colors": [
+        { "name": "Black", "hex": "#1A1A1A" },
+        { "name": "Brown", "hex": "#8B4513" },
+        { "name": "Tan", "hex": "#D2B48C" }
+      ],
+      "price": 118,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=400"
+    },
+    {
+      "id": "W009",
+      "name": "Slip-On Sneakers",
+      "type": "Athletic",
+      "category": "Footwear",
+      "description": "Comfortable slip-on sneakers designed for everyday movement. Lightweight and easy to wear.",
+      "sizes": ["5", "6", "7", "8", "9"],
+      "colors": [
+        { "name": "White", "hex": "#FFFFFF" },
+        { "name": "Pink", "hex": "#FFC1CC" },
+        { "name": "Mint", "hex": "#98FF98" }
+      ],
+      "price": 65,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400"
+    },
+    {
+      "id": "W010",
+      "name": "Evening Gown",
+      "type": "Formal",
+      "category": "Dresses",
+      "description": "Elegant evening gown designed for special occasions. Premium fabric gives a luxurious and graceful look.",
+      "sizes": ["XS", "S", "M", "L"],
+      "colors": [
+        { "name": "Black", "hex": "#1A1A1A" },
+        { "name": "Maroon", "hex": "#800000" },
+        { "name": "Navy", "hex": "#1C2C5E" }
+      ],
+      "price": 199,
+      "inStock": false,
+      "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400"
+    },
+    {
+      "id": "W012",
+      "name": "Leather Tote Bag",
+      "type": "Casual",
+      "category": "Accessories",
+      "description": "Spacious leather tote bag perfect for daily use. Stylish and practical for work or casual outings.",
+      "sizes": ["One Size"],
+      "colors": [
+        { "name": "Black", "hex": "#1A1A1A" },
+        { "name": "Brown", "hex": "#8B4513" },
+        { "name": "Tan", "hex": "#D2B48C" }
+      ],
+      "price": 95,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400"
+    }
+  ],
+
+  "kids": [
+    {
+      "id": "K001",
+      "name": "Dino Print T-Shirt",
+      "type": "Casual",
+      "category": "Tops",
+      "description": "Fun dinosaur print t-shirt designed for kids. Soft fabric ensures comfort for everyday play.",
+      "sizes": ["2T", "3T", "4T", "5T"],
+      "colors": [
+        { "name": "Green", "hex": "#228B22" },
+        { "name": "Blue", "hex": "#4A7C9D" },
+        { "name": "White", "hex": "#FFFFFF" }
+      ],
+      "price": 18,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400"
+    },
+    {
+      "id": "K002",
+      "name": "Pull-On Joggers",
+      "type": "Casual",
+      "category": "Bottoms",
+      "description": "Comfortable joggers designed for kids’ daily wear. Soft waistband and breathable fabric.",
+      "sizes": ["2T", "3T", "4T", "5T", "6T"],
+      "colors": [
+        { "name": "Gray", "hex": "#A9A9A9" },
+        { "name": "Navy", "hex": "#1C2C5E" },
+        { "name": "Black", "hex": "#1A1A1A" }
+      ],
+      "price": 22,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400"
+    },
+    {
+      "id": "K003",
+      "name": "Hooded Rain Jacket",
+      "type": "Outerwear",
+      "category": "Outerwear",
+      "description": "Water-resistant hooded jacket to keep kids dry in rainy weather. Lightweight and easy to wear.",
+      "sizes": ["4", "6", "8", "10", "12"],
+      "colors": [
+        { "name": "Yellow", "hex": "#FFD700" },
+        { "name": "Red", "hex": "#C8102E" },
+        { "name": "Navy", "hex": "#1C2C5E" }
+      ],
+      "price": 45,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=400"
+    },
+    {
+      "id": "K004",
+      "name": "Light-Up Sneakers",
+      "type": "Athletic",
+      "category": "Footwear",
+      "description": "Fun light-up sneakers designed for active kids. Comfortable sole with playful lighting effects.",
+      "sizes": ["10C", "11C", "12C", "1Y", "2Y"],
+      "colors": [
+        { "name": "Pink", "hex": "#FFC1CC" },
+        { "name": "Blue", "hex": "#4A7C9D" },
+        { "name": "Red", "hex": "#C8102E" }
+      ],
+      "price": 38,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400"
+    },
+    {
+      "id": "K005",
+      "name": "Floral Sundress",
+      "type": "Casual",
+      "category": "Dresses",
+      "description": "Cute floral sundress designed for summer days. Light and breathable fabric for comfort.",
+      "sizes": ["2T", "3T", "4T", "5T"],
+      "colors": [
+        { "name": "Pink", "hex": "#FFC1CC" },
+        { "name": "Yellow", "hex": "#FFD700" },
+        { "name": "Mint", "hex": "#98FF98" }
+      ],
+      "price": 28,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=400"
+    },
+    {
+      "id": "K006",
+      "name": "School Uniform Polo",
+      "type": "Formal",
+      "category": "Tops",
+      "description": "Classic school polo shirt designed for uniform use. Durable and comfortable for daily wear.",
+      "sizes": ["4", "6", "8", "10", "12", "14"],
+      "colors": [
+        { "name": "White", "hex": "#FFFFFF" },
+        { "name": "Navy", "hex": "#1C2C5E" },
+        { "name": "Gray", "hex": "#A9A9A9" }
+      ],
+      "price": 20,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=400"
+    },
+    {
+      "id": "K008",
+      "name": "Slim Fit Khakis",
+      "type": "Formal",
+      "category": "Bottoms",
+      "description": "Smart slim-fit khakis designed for school and formal use. Comfortable and durable fabric.",
+      "sizes": ["4", "6", "8", "10", "12"],
+      "colors": [
+        { "name": "Beige", "hex": "#D2B48C" },
+        { "name": "Navy", "hex": "#1C2C5E" },
+        { "name": "Black", "hex": "#1A1A1A" }
+      ],
+      "price": 30,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1591195853828-11db35f65b7f?w=400"
+    },
+    {
+      "id": "K009",
+      "name": "Puddle Boots (Wellies)",
+      "type": "Outerwear",
+      "category": "Footwear",
+      "description": "Waterproof boots designed for rainy days and outdoor play. Keeps kids feet dry and comfortable.",
+      "sizes": ["10C", "11C", "12C", "1Y", "2Y"],
+      "colors": [
+        { "name": "Red", "hex": "#C8102E" },
+        { "name": "Yellow", "hex": "#FFD700" },
+        { "name": "Pink", "hex": "#FFC1CC" }
+      ],
+      "price": 32,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1614252369475-531eba8356a4?w=400"
+    },
+    {
+      "id": "K010",
+      "name": "Sports Shorts",
+      "type": "Athletic",
+      "category": "Bottoms",
+      "description": "Lightweight sports shorts designed for active play. Breathable fabric ensures all-day comfort.",
+      "sizes": ["4", "6", "8", "10", "12"],
+      "colors": [
+        { "name": "Black", "hex": "#1A1A1A" },
+        { "name": "Blue", "hex": "#4A7C9D" },
+        { "name": "Green", "hex": "#228B22" },
+        { "name": "Red", "hex": "#C8102E" }
+      ],
+      "price": 18,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1565083664-4d3c8c2e0c5e?w=400"
+    },
+    {
+      "id": "K011",
+      "name": "Denim Dungarees",
+      "type": "Casual",
+      "category": "Bottoms",
+      "description": "Cute denim dungarees designed for kids’ casual wear. Durable and comfortable for daily activities.",
+      "sizes": ["2T", "3T", "4T", "5T"],
+      "colors": [
+        { "name": "Denim", "hex": "#2C3E50" },
+        { "name": "Black", "hex": "#1A1A1A" }
+      ],
+      "price": 38,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1541099649105-f69ad21f864f?w=400"
+    },
+    {
+      "id": "K012",
+      "name": "Beanie Hat",
+      "type": "Outerwear",
+      "category": "Accessories",
+      "description": "Warm knitted beanie hat for kids. Soft and cozy material keeps head warm in cold weather.",
+      "sizes": ["One Size"],
+      "colors": [
+        { "name": "Gray", "hex": "#A9A9A9" },
+        { "name": "Red", "hex": "#C8102E" },
+        { "name": "Navy", "hex": "#1C2C5E" },
+        { "name": "Green", "hex": "#228B22" }
+      ],
+      "price": 14,
+      "inStock": true,
+      "image": "https://images.unsplash.com/photo-1624371438177-0e5d8f5e0b0c?w=400"
+    }
+  ]
+}
