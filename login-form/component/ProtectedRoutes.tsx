@@ -16,8 +16,8 @@ function ProtectedRoutes({ user, onLogout }: Props) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setUserData(user);
-    }, 500);
-
+    }, 5000);
+    console.log(user);
     return () => clearTimeout(timer);
   }, [user]);
   const cartClose = () => {
