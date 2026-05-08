@@ -23,7 +23,7 @@ type Items = {
   name: string;
   image: string;
   color: string;
-  size: string;
+
   price: number;
   quantity: number;
 };
@@ -537,7 +537,7 @@ function CheckOut() {
                       {item.name}
                     </p>
                     <p className="text-sm text-(--grey-color)">
-                      {item.color} / {item.size}
+                      Color: {item.color}
                     </p>
                     <p className="text-sm text-(--grey-color)">
                       Qty: {item.quantity}

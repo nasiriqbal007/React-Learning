@@ -1,13 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import signupImg from "../src/assets/signup_img.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import type { UserData } from "../types/UserData";
+import AuthContext from "../src/context/AuthContext";
 
 type FormData = {
+  id: string;
   firstName: string;
   lastName: string;
   email: string;
   password: string;
   Login: boolean;
+  agree: boolean;
+  role: string;
 };
 
 type ErrorState = {
@@ -17,22 +22,31 @@ type ErrorState = {
   password?: string;
 };
 
-type Props = {
-  onSignup: (userData: FormData) => void;
-};
-
-function SignUp({ onSignup }: Props) {
+function SignUp() {
+  const { onSignup } = useContext(AuthContext);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState<FormData>({
+    id: crypto.randomUUID(),
     firstName: "",
     lastName: "",
     email: "",
     password: "",
     Login: true,
+    role: "",
+    agree: false,
   });
   const [errors, setErrors] = useState<ErrorState>({});
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
+    if (e.target.type === "checkbox") {
+      const target = e.target as HTMLInputElement;
+      setFormData((prev) => ({ ...prev, [e.target.name]: target.checked }));
+      return;
+    }
     const { name, value } = e.target;
+
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -56,7 +70,23 @@ function SignUp({ onSignup }: Props) {
     setErrors(error);
 
     if (Object.keys(error).length === 0) {
-      onSignup(formData);
+      const userData: UserData = {
+        id: formData.id,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        password: formData.password,
+        Login: true,
+        role: (formData.role as "user" | "admin") || "user",
+        agree: formData.agree,
+      };
+
+      onSignup?.(userData);
+      if (userData.role === "admin") {
+        navigate("/admin/dashboard");
+        return;
+      }
+      navigate("/home");
     }
   };
 
@@ -128,13 +158,28 @@ function SignUp({ onSignup }: Props) {
             <span className="text-sm text-red-500">{errors.password}</span>
           )}
 
+          <div>
+            <select
+              onChange={handleChange}
+              value={formData.role}
+              name="role"
+              className="input-field"
+            >
+              <option value="">Select Role</option>
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
           <div className="flex items-center gap-2 mt-2">
             <input
+              checked={formData.agree}
               type="checkbox"
               id="agree"
               name="agree"
               className="h-4 w-4"
+              onChange={handleChange}
             />
+
             <label htmlFor="agree" className="text-sm">
               I agree to the terms and conditions
             </label>

@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import loginImg from "../src/assets/login_img.jpg";
-import { Link } from "react-router-dom";
-import type { UserData } from "../types/UserData";
+import { Link, useNavigate } from "react-router-dom";
+import AuthContext from "../src/context/AuthContext";
+
 type FormData = {
   email: string;
   password: string;
@@ -12,11 +13,11 @@ type ErrorState = {
   password?: string;
 };
 
-type Props = {
-  onLogin: (userData: UserData) => void;
-};
+function Login() {
+  const { onLogin } = useContext(AuthContext);
+  const isAdmin = location.pathname.includes("admin");
+  const navigate = useNavigate();
 
-function Login({ onLogin }: Props) {
   const [formData, setFormData] = useState<FormData>({
     email: "",
     password: "",
@@ -48,28 +49,27 @@ function Login({ onLogin }: Props) {
     setErrors(error);
     if (Object.keys(error).length > 0) return;
 
-    const saved = localStorage.getItem("user");
-    if (saved) {
-      const savedUser = JSON.parse(saved);
-      if (
-        savedUser.email === formData.email &&
-        savedUser.password === formData.password
-      ) {
-        onLogin(savedUser);
-        return;
-      }
-    }
-    setAuthError("Invalid email or password.");
-  };
+    const success = onLogin?.({
+      email: formData.email,
+      password: formData.password,
+      role: isAdmin ? "admin" : "user",
+      login: true,
+    });
 
+    if (success) {
+      navigate(isAdmin ? "/admin/dashboard" : "/home");
+    } else {
+      setAuthError("Invalid email or password");
+    }
+  };
   return (
     <div className="flex h-screen w-full">
       <div className="left">
         <img src={loginImg} alt="login" className="auth-img" />
       </div>
       <div className="right flex flex-col justify-center items-center w-full">
-        <h1 className="text-3xl font-bold flex flex-col items-start justify-start text-left">
-          Welcome Back
+        <h1 className="text-3xl font-bold flex flex-col items-start justify-start text-left self-center gap-1">
+          Welcome Back {isAdmin ? "Admin" : "User"}
           <span className="text-sm font-light text-(--greyColor)">
             please login here
           </span>
@@ -109,15 +109,12 @@ function Login({ onLogin }: Props) {
           )}
 
           <button className="auth-btn" type="submit">
-            Login
+            {isAdmin ? "Admin Login" : "Login"}
           </button>
 
           <p className="text-sm text-center mt-2">
             Don't have an account?{" "}
-            <Link
-              to="/signup"
-              className="text-(--primary-color) font-medium"
-            >
+            <Link to="/signup" className="text-(--primary-color) font-medium">
               Sign Up
             </Link>
           </p>

@@ -6,7 +6,7 @@ type CartItem = {
   name: string;
   price: number;
   color: string;
-  size: string;
+
   quantity: number;
 };
 
@@ -21,9 +21,9 @@ function Cart({ open, close }: Props) {
   );
 
   const [cart, setCart] = useState<CartItem[]>(cartItems);
-  const increaseQuantity = (id: string, color: string, size: string) => {
+  const increaseQuantity = (id: string, color: string) => {
     const updatedCart = cart.map((item) =>
-      item.id === id && item.color === color && item.size === size
+      item.id === id && item.color === color
         ? { ...item, quantity: item.quantity + 1 }
         : item,
     );
@@ -31,25 +31,23 @@ function Cart({ open, close }: Props) {
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
-  const decreaseQuantity = (id: string, color: string, size: string) => {
+  const decreaseQuantity = (id: string, color: string) => {
     const updatedCart = cart.map((item) =>
-      item.id === id &&
-      item.color === color &&
-      item.size === size &&
-      item.quantity > 1
+      item.id === id && item.color === color && item.quantity > 1
         ? { ...item, quantity: item.quantity - 1 }
         : item,
     );
     setCart(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
-  const removeItem = (id: string, color: string, size: string) => {
+  const removeItem = (id: string, color: string) => {
     const remove = cartItems.filter(
-      (item) => !(item.id === id && item.color === color && item.size === size),
+      (item) => !(item.id === id && item.color === color),
     );
     setCart(remove);
     localStorage.setItem("cart", JSON.stringify(remove));
   };
+
   if (!open) return null;
 
   return (
@@ -59,16 +57,15 @@ function Cart({ open, close }: Props) {
         className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
       />
 
-      <div className="fixed top-0 right-0 h-full w-100 bg-(--secondary-color) z-50 flex flex-col">
-        <div className="flex justify-between items-center px-6 py-5 border-b border-(--grey-color)">
+      <div className="fixed top-0 right-0 h-full w-100 bg-(--greyColor) z-50 flex flex-col">
+        <div className="flex justify-between items-center px-6 py-5 border-b border-(--secondary-color)">
           <h2 className="text-lg font-semibold text-(--text-color)">
             Cart :{" "}
-            <span className="text-sm font-light">{cartItems.length}</span>
+            <span className="text-sm font-bold text-(--success-color)">
+              {cartItems.length}
+            </span>
           </h2>
-          <button
-            onClick={close}
-            className="text-(--grey-color) hover:text-(--text-color) text-xl cursor-pointer"
-          >
+          <button onClick={close} className="font-bold">
             ✕
           </button>
         </div>
@@ -76,38 +73,32 @@ function Cart({ open, close }: Props) {
         {/* items */}
         <div className="flex flex-col overflow-y-auto flex-1 px-6 py-4 gap-4">
           {cartItems.length === 0 ? (
-            <p className="text-sm text-(--grey-color) text-center mt-10">
+            <p className="text-sm text-(--text-color) text-center mt-10">
               Your cart is empty
             </p>
           ) : (
             cartItems.map((item) => (
               <div
                 key={item.id}
-                className="flex justify-between items-center border-b border-(--grey-color) pb-4"
+                className="flex justify-between items-center border-b border-(--greyColor) pb-4"
               >
                 {/* left */}
                 <div className="flex flex-col gap-1">
                   <p className="font-semibold text-(--text-color) text-sm">
                     {item.name}
                   </p>
-                  <p className="text-xs text-(--grey-color)">
-                    {item.color} · {item.size}
-                  </p>
-                  <div className="flex items-center gap-2 mt-1">
+                  <p className="text-sm text-(--text-color)">{item.color}</p>
+                  <div className="flex items-center gap-2 mt-1 py-3">
                     <button
-                      onClick={() =>
-                        decreaseQuantity(item.id, item.color, item.size)
-                      }
-                      className="text-xs bg-(--primary-color) text-white px-2 rounded-sm"
+                      onClick={() => decreaseQuantity(item.id, item.color)}
+                      className="btn-primary text-sm px-3 py-1"
                     >
                       -
                     </button>
-                    <span className="text-sm">{item.quantity}</span>
+                    <span className="text-md">{item.quantity}</span>
                     <button
-                      onClick={() =>
-                        increaseQuantity(item.id, item.color, item.size)
-                      }
-                      className="text-xs bg-(--primary-color) text-white px-2 rounded-sm"
+                      onClick={() => increaseQuantity(item.id, item.color)}
+                      className="btn-primary text-sm px-3 py-1"
                     >
                       +
                     </button>
@@ -120,7 +111,7 @@ function Cart({ open, close }: Props) {
                     ${item.price * item.quantity}
                   </p>
                   <button
-                    onClick={() => removeItem(item.id, item.color, item.size)}
+                    onClick={() => removeItem(item.id, item.color)}
                     className="text-xs text-red-400 hover:text-red-600 cursor-pointer"
                   >
                     Remove

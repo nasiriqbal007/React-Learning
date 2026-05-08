@@ -1,4 +1,3 @@
-/* 1. Google Font - MUST be at the very top */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 @import "tailwindcss";
@@ -9,11 +8,21 @@
 }
 
 :root {
-  --primary-color: #111111;
-  --secondary-color: #e5e5e5;
+  --primary-color: #000000;
+  --primary-hover: #1a1a1a;
+  --secondary-color: #f0f0f0;
   --background-color: #ffffff;
-  --text-color: #333333;
-  --greyColor: #a4a1aa;
+  --text-color: #222222;
+  --greyColor: #fffbfb;
+  --hint-color: #6b7280;
+  --accent-color: #0066cc;
+  --accent-hover: #0052a3;
+  --success-color: #00a86b;
+  --error-color: #ff0000;
+  --warning-color: #f39c12;
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+
   color-scheme: dark;
 }
 
@@ -25,6 +34,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 .auth-img {
   object-fit: fill;
   height: 100vh;
@@ -32,43 +42,87 @@ body {
 }
 
 @layer components {
+  /* Input field styling */
   .input-field {
-    @apply border text-sm rounded-xl w-full px-3 py-2.5 shadow-sm ring-1 focus:outline-none;
-    background-color: var(--secondary-color);
-    border-color: var(--primary-color);
-    color: inherit;
+    @apply border text-sm rounded-xl w-full px-3 py-2.5 shadow-md ring-0 focus:outline-none;
+    background-color: var(--greyColor);
+    border-color: var(--accent-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
   }
 
   .input-field::placeholder {
-    color: var(--greyColor);
+    color: var(--hint-color);
+    font-size: 0.875rem;
   }
 
   .input-field:focus {
     outline: none;
-    box-shadow: 0 0 0 1px var(--primary-color);
-    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-color);
+    background-color: var(--background-color);
+    transform: translateY(-2px);
   }
 
+  /* Label styling */
   .label {
     @apply block text-sm font-light;
+    margin-bottom: 6px;
   }
 
-  /* Button */
+  /* ---- BUTTONS ---- */
+
   .auth-btn {
     @apply text-sm rounded-xl w-full px-3 py-2.5 shadow-sm;
     background-color: var(--primary-color);
     color: var(--background-color);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
   }
 
-  /* Primary Button */
+  /* Button hover effect */
+  .auth-btn:hover {
+    background-color: var(--primary-hover);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Secondary button  */
   .btn-primary {
-    @apply border rounded-sm py-2 px-2 font-medium hover:bg-gray-600 scale-110 transition-all duration-300 ease-in-out cursor-pointer;
+    @apply border rounded-sm py-2 px-2 font-medium cursor-pointer;
     background-color: var(--primary-color);
     color: var(--secondary-color);
+    border-color: var(--primary-color);
+    transition: all 0.3s ease;
   }
+  /*  we need to varinats of button  */
+  button {
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  button:hover {
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  /* button diaslbe */
+  button:disabled {
+    background-color: var(--greyColor);
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  .btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: scale(1.05);
 
-  /* Navigation Link */
-  .nav-link {
-    @apply font-medium hover:text-amber-300 transition-all duration-300 ease-in-out cursor-pointer;
+    /* Navigation link */
+    .nav-link {
+      @apply font-medium cursor-pointer;
+      color: var(--text-color);
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--warning-color);
+    }
   }
 }

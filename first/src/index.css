@@ -3,6 +3,7 @@
   --secondary-color: #fff;
   --background-color: #e7d3d3;
   --hover-color: #f0a500;
+  --highlight-green: #6ff409;
 }
 
 body {
@@ -94,7 +95,7 @@ aside {
 
 .sidebar {
   padding: 20px;
-  border: 2px solid #333;
+  border: 2px solid var(--primary-color);
 
   align-items: center;
   justify-content: start;
@@ -191,7 +192,7 @@ p {
 }
 .card h3 {
   margin: 0;
-  color: #6ff409;
+  color: var(--highlight-green);
 }
 
 .counter {
