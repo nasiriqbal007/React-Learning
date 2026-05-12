@@ -1,0 +1,74 @@
+@import "tailwindcss";
+@layer base {
+  :root {
+    --primary-color: #ff5a1f;
+    --background-color: #edeef2;
+    --border-color: #e0e2ea;
+    --card-color: #ffffff;
+    --card-bg: #f0f2f5;
+  }
+
+  body {
+    font-family: "Inter", sans-serif;
+  }
+}
+
+@layer components {
+  .left-menu-item {
+    @apply relative flex items-center gap-3 p-2 cursor-pointer transition-all duration-150 hover:pl-3 hover:bg-[#f5f7fa];
+    color: #444;
+  }
+
+  .left-menu-item:hover {
+    color: var(--primary-color);
+  }
+
+  .left-menu-item::after {
+    @apply absolute -left-4 top-0 bottom-0 w-1 bg-transparent transition-all;
+    content: "";
+  }
+
+  .left-menu-item:hover::after {
+    background-color: var(--primary-color);
+  }
+
+  .left-menu-item.active {
+    @apply pl-3 bg-red-100;
+    opacity: 0.5;
+    color: var(--primary-color);
+  }
+
+  .left-menu-item.active::after {
+    background-color: var(--primary-color);
+  }
+
+  .story-add-icon {
+    @apply w-12 h-12 rounded-full border-2 border-dashed border-[#555555] flex items-center justify-center group-hover:border-[#ff5a1f] transition-all duration-150 group-hover:scale-120;
+  }
+
+  .filter-btn {
+    @apply px-6 py-2 bg-white text-[#555] rounded-full font-normal whitespace-nowrap cursor-pointer border-[1.5px] border-[#E4E6EA] hover:text-[#87baf0] hover:bg-blue-50 hover:border-[#87baf0] hover:-translate-y-0.5 transition-all duration-130;
+  }
+
+  .post-action-btn {
+    @apply flex items-center gap-2 text-gray-400 hover:text-[#ff5a1f] hover:bg-gray-100 py-2 flex-1 justify-center transition-colors whitespace-nowrap cursor-pointer;
+  }
+
+  .icon-btn {
+    @apply w-9 h-9 bg-(--card-bg) flex items-center justify-center rounded-full hover:bg-(--border-color) cursor-pointer transition-all duration-150 hover:scale-120;
+  }
+
+  .friend-item {
+    @apply w-full flex items-center p-2 justify-between cursor-pointer transition-all duration-150 hover:translate-x-1 hover:bg-[#f5f7fa];
+  }
+
+  .user-avatar {
+    @apply w-8 h-8 flex items-center justify-center rounded-full;
+  }
+  .hashtag-btn {
+    @apply py-2 px-3 bg-[#EAF3FB] text-[#185FA5] rounded-full text-sm font-semibold border border-[#B5D4F4] hover:bg-[#185FA5] hover:border-none hover:text-white transition-all;
+  }
+  .follow-btn {
+    @apply py-2 px-3 bg-[#EAF3FB] text-[#185FA5] rounded-2xl text-sm font-semibold border border-[#B5D4F4] hover:bg-[#185FA5] hover:border-none hover:text-white transition-all;
+  }
+}

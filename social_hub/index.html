@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="output.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -13,21 +13,11 @@
   </head>
   <style>
     /* Custom styles can be added here */
-    :root {
-      --primary-color: #ff5a1f;
-      --background-color: #edeef2;
-      --border-color: #e0e2ea;
-      --card-color: #ffffff;
-      --card-bg: #f0f2f5;
-    }
-    body {
-      font-family: "Inter", sans-serif;
-    }
   </style>
   <body class="bg-[#EDEEF2]">
     <!-- topbar -->
     <div
-      class="flex px-6 py-3 bg-(--card-color) border-b-1 border-[--border-color] items-center justify-between"
+      class="flex px-6 py-3 bg-(--card-color) border-b border-[--border-color] items-center justify-between"
     >
       <!-- title -->
       <div>
@@ -36,33 +26,29 @@
         </h1>
       </div>
       <!-- seachbar -->
-      <div class="w-[260px]">
+      <div class="w-65">
         <input
           type="text"
           placeholder="Search..."
-          class="w-full bg-[#EAF3FB] py-2 pr-4 pl-9 text-[#1a3a5c] border border-[#B5D4F4] rounded-[24px] placeholder:text-[#1a3a5c] focus:bg-(--card-color) focus:ring-[#1a3a5c] hover:bg-[#dff0fb] hover:border-[#85b7eb] transition-all duration-150 outline-solid outline-1 outline-transparent focus:outline-[#1a3a5c]"
+          class="w-full bg-[#EAF3FB] py-2 pr-4 pl-9 text-[#1a3a5c] border border-[#B5D4F4] rounded-3xl placeholder:text-[#1a3a5c] focus:bg-(--card-color) focus:ring-[#1a3a5c] hover:bg-[#dff0fb] hover:border-[#85b7eb] transition-all duration-150 outline-solid outline-1 outline-transparent focus:outline-[#1a3a5c]"
         />
       </div>
       <!-- menus -->
       <div class="flex items-center space-x-4">
         <ul class="flex space-x-4 mt-4 items-center">
-          <div
-            class="w-9 h-9 bg-(--card-bg) flex items-center justify-center rounded-full hover:bg-(--border-color) cursor-pointer transition-all duration-150 hover:scale-120"
-          >
-            <i class="fa-regular fa-home"></i>
+          <div class="icon-btn">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg>
           </div>
 
           <!-- User -->
-          <div
-            class="w-9 h-9 bg-(--card-bg) flex items-center justify-center rounded-full hover:bg-(--border-color) cursor-pointer transition-all duration-150 hover:scale-120"
-          >
+          <div class="icon-btn">
             <i class="fa-regular fa-user"></i>
           </div>
 
           <!-- Bell -->
-          <div
-            class="relative w-9 h-9 bg-(--card-bg) flex items-center justify-center rounded-full hover:bg-(--border-color) cursor-pointer transition-all duration-150 hover:scale-120"
-          >
+          <div class="icon-btn" style="position: relative">
             <i class="fa-regular fa-bell"></i>
             <span
               class="absolute top-0 right-0 border-white border-2 text-[#FF5A1F] text-[18px] w-3 h-3 rounded-full flex items-center justify-center"
@@ -72,9 +58,7 @@
           </div>
 
           <!-- Comment -->
-          <div
-            class="w-9 h-9 bg-(--card-bg) flex items-center justify-center rounded-full hover:bg-(--border-color) cursor-pointer transition-all duration-150 hover:scale-120"
-          >
+          <div class="icon-btn">
             <i class="fa-regular fa-comment"></i>
           </div>
 
@@ -87,69 +71,408 @@
       </div>
     </div>
     <!-- main content -->
-    <div class="grid grid-cols-[210px_1fr_270px] px-3 py-4">
+    <div
+      class="grid grid-cols-[210px_1fr_270px] px-2.5 py-4 gap-2 mx-auto overflow-hidden"
+    >
       <!-- left sidebar -->
-      <div class="bg-(--card-color) rounded-lg overflow-hidden">
-        <div class="py-2">
-          <ul class="flex flex-col gap-1 font-semibold text-[#444]">
-            <!-- Home  -->
-            <li
-              class="active relative flex items-center gap-3 p-2 cursor-pointer transition-all duration-150 hover:pl-3 hover:bg-[#f5f7fa] hover:text-(--primary-color) [&.active]:pl-3 [&.active]:bg-red-50 [&.active]:text-(--primary-color) after:absolute after:left-[-16px] after:top-0 after:bottom-0 after:w-[3px] after:bg-transparent after:transition-all hover:after:bg-(--primary-color) [&.active]:after:bg-(--primary-color) bg-opacity-10 bg-(--primary-color)"
-            >
-              <i class="fa-regular fa-home w-5 text-center"></i> Home
-            </li>
 
-            <!-- Explore -->
-            <li
-              class="relative flex items-center gap-3 p-2 cursor-pointer transition-all duration-150 hover:pl-3 hover:bg-[#f5f7fa] hover:text-(--primary-color) [&.active]:pl-3 [&.active]:bg-[#f5f7fa] [&.active]:text-(--primary-color) after:absolute after:left-[-16px] after:top-0 after:bottom-0 after:w-[3px] after:bg-transparent after:transition-all hover:after:bg-(--primary-color) [&.active]:after:bg-(--primary-color)"
-            >
-              <i class="fa-regular fa-compass w-5 text-center"></i> Explore
-            </li>
+      <!-- sidebar to with then we will add to only how much -->
+      <div>
+        <div class="bg-(--card-color) rounded-lg overflow-hidden">
+          <div class="">
+            <ul class="flex flex-col gap-1 font-semibold text-[#444]">
+              <!-- Home -->
+              <li class="left-menu-item active">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                </svg>
+                Home
+              </li>
 
-            <!-- Reels -->
-            <li
-              class="relative flex items-center gap-3 p-2 cursor-pointer transition-all duration-150 hover:pl-3 hover:bg-[#f5f7fa] hover:text-(--primary-color) [&.active]:pl-3 [&.active]:bg-[#f5f7fa] [&.active]:text-(--primary-color) after:absolute after:left-[-16px] after:top-0 after:bottom-0 after:w-[3px] after:bg-transparent after:transition-all hover:after:bg-(--primary-color) [&.active]:after:bg-(--primary-color)"
-            >
-              <i class="fa-regular fa-film w-5 text-center"></i> Reels
-            </li>
+              <!-- Explore -->
+              <li class="left-menu-item">
+                <i class="fa-regular fa-compass w-5 text-center"></i> Explore
+              </li>
 
-            <!-- Liked Posts -->
-            <li
-              class="relative flex items-center gap-3 p-2 cursor-pointer transition-all duration-150 hover:pl-3 hover:bg-[#f5f7fa] hover:text-(--primary-color) [&.active]:pl-3 [&.active]:bg-[#f5f7fa] [&.active]:text-(--primary-color) after:absolute after:left-[-16px] after:top-0 after:bottom-0 after:w-[3px] after:bg-transparent after:transition-all hover:after:bg-(--primary-color) [&.active]:after:bg-(--primary-color)"
-            >
-              <i class="fa-regular fa-heart w-5 text-center"></i> Liked Posts
-            </li>
+              <!-- Reels -->
+              <li class="left-menu-item">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54h3.5v4h4v-4h2.96l-4.25-5.81z"
+                  />
+                </svg>
+                Reels
+              </li>
 
-            <!-- Saved -->
-            <li
-              class="relative flex items-center gap-3 p-2 cursor-pointer transition-all duration-150 hover:pl-3 hover:bg-[#f5f7fa] hover:text-(--primary-color) [&.active]:pl-3 [&.active]:bg-[#f5f7fa] [&.active]:text-(--primary-color) after:absolute after:left-[-16px] after:top-0 after:bottom-0 after:w-[3px] after:bg-transparent after:transition-all hover:after:bg-(--primary-color) [&.active]:after:bg-(--primary-color)"
-            >
-              <i class="fa-regular fa-bookmark w-5 text-center"></i> Saved
-            </li>
+              <!-- Liked Posts -->
+              <li class="left-menu-item">
+                <i class="fa-regular fa-heart w-5 text-center"></i> Liked Posts
+              </li>
 
-            <!-- Events -->
-            <li
-              class="relative flex items-center gap-3 p-2 cursor-pointer transition-all duration-150 hover:pl-3 hover:bg-[#f5f7fa] hover:text-(--primary-color) [&.active]:pl-3 [&.active]:bg-[#f5f7fa] [&.active]:text-(--primary-color) after:absolute after:left-[-16px] after:top-0 after:bottom-0 after:w-[3px] after:bg-transparent after:transition-all hover:after:bg-(--primary-color) [&.active]:after:bg-(--primary-color)"
-            >
-              <i class="fa-regular fa-calendar w-5 text-center"></i> Events
-            </li>
+              <!-- Saved -->
+              <li class="left-menu-item">
+                <i class="fa-regular fa-bookmark w-5 text-center"></i> Saved
+              </li>
 
-            <!-- Settings -->
-            <li
-              class="relative flex items-center gap-3 p-2 cursor-pointer transition-all duration-150 hover:pl-3 hover:bg-[#f5f7fa] hover:text-(--primary-color) [&.active]:pl-3 [&.active]:bg-[#f5f7fa] [&.active]:text-(--primary-color) after:absolute after:left-[-16px] after:top-0 after:bottom-0 after:w-[3px] after:bg-transparent after:transition-all hover:after:bg-(--primary-color) [&.active]:after:bg-(--primary-color)"
-            >
-              <i class="fa-regular fa-gear w-5 text-center"></i> Settings
-            </li>
-          </ul>
+              <!-- Events -->
+              <li class="left-menu-item">
+                <i class="fa-regular fa-calendar w-5 text-center"></i> Events
+              </li>
+
+              <!-- Settings -->
+              <li class="left-menu-item">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.62l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.48.1.62l2.03 1.58c-.05.3-.07.62-.07.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.62l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.48-.1-.62l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"
+                  />
+                </svg>
+                Settings
+              </li>
+            </ul>
+            <div class="text-semibold text-[13px]">
+              <h3 class="uppercase px-2">Active Friends</h3>
+              <div class="gap-1 flex mt-3 flex-col w-full">
+                <div class="friend-item">
+                  <div class="flex items-center gap-2">
+                    <div class="user-avatar bg-purple-500">ZA</div>
+                    <div>
+                      <p class="font-medium">Zara Ahmed</p>
+                      <p class="text-gray-400 text-sm">Active now</p>
+                    </div>
+                  </div>
+                  <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                </div>
+                <!-- 2 -->
+                <div class="friend-item">
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="user-avatar bg-purple-500 transition-all duration-15"
+                    >
+                      MK
+                    </div>
+                    <div>
+                      <p class="font-medium">Mike Khan</p>
+                      <p class="text-gray-400 text-sm">5m g</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- main feed -->
       <div>
-        <h2 class="font-bold text-lg mb-2">main side</h2>
+        <!-- stories -->
+        <div
+          class="bg-(--card-color) mb-5 flex gap-5 overflow-x-auto items-center justify-start rounded-xl py-2 px-4 overflow-y-auto"
+        >
+          <div
+            class="flex flex-col items-center gap-2 cursor-pointer group shrink-0"
+          >
+            <div class="story-add-icon">
+              <i class="fa-solid fa-plus text-[#888888] text-xl"></i>
+            </div>
+            <span class="text-xs text-[#555]">Add Story</span>
+          </div>
+
+          <div
+            class="flex flex-col items-center gap-2 cursor-pointer group transition-all duration-150 hover:-translate-y-1"
+          >
+            <div
+              class="w-12 h-12 rounded-full ring-2 ring-[#ff5a1f] ring-offset-2 ring-offset-white flex items-center justify-center bg-linear-to-br from-purple-500 to-purple-700 shrink-0 group-hover:scale-110 transition-transform duration-150"
+            >
+              <span class="text-white font-bold text-sm">ZA</span>
+            </div>
+            <span class="text-xs text-[#555] text-[11px]">Zara</span>
+          </div>
+
+          <div
+            class="flex flex-col items-center gap-2 cursor-pointer group transition-all duration-150 hover:-translate-y-1"
+          >
+            <div
+              class="w-12 h-12 rounded-full ring-2 ring-[#ff5a1f] ring-offset-2 ring-offset-white flex items-center justify-center bg-linear-to-br from-pink-500 to-pink-700 shrink-0 group-hover:scale-110 transition-transform duration-150"
+            >
+              <span class="text-white font-bold text-sm">MK</span>
+            </div>
+            <span class="text-xs text-[#555] text-[11px]">Mike</span>
+          </div>
+
+          <div
+            class="flex flex-col items-center gap-2 cursor-pointer group transition-all duration-150 hover:-translate-y-1"
+          >
+            <div
+              class="w-12 h-12 rounded-full ring-2 ring-[#ff5a1f] ring-offset-2 ring-offset-white flex items-center justify-center bg-linear-to-br from-teal-500 to-teal-700 shrink-0 group-hover:scale-110 transition-transform duration-150"
+            >
+              <span class="text-white font-bold text-sm">AJ</span>
+            </div>
+            <span class="text-xs text-[#555] text-[11px]">Alex</span>
+          </div>
+
+          <div
+            class="flex flex-col items-center gap-2 cursor-pointer group transition-all duration-150 hover:-translate-y-1"
+          >
+            <div
+              class="w-12 h-12 rounded-full ring-2 ring-[#ff5a1f] ring-offset-2 ring-offset-white flex items-center justify-center bg-linear-to-br from-amber-500 to-amber-700 shrink-0 group-hover:scale-110 transition-transform duration-150"
+            >
+              <span class="text-white font-bold text-sm">NS</span>
+            </div>
+            <span class="text-xs text-[#555] text-[11px]">Nina</span>
+          </div>
+
+          <div
+            class="flex flex-col items-center gap-2 cursor-pointer group transition-all duration-150 hover:-translate-y-1"
+          >
+            <div
+              class="w-12 h-12 rounded-full ring-2 ring-[#ff5a1f] ring-offset-2 ring-offset-white flex items-center justify-center bg-linear-to-br from-red-500 to-red-700 shrink-0 group-hover:scale-110 transition-transform duration-150"
+            >
+              <span class="text-white font-bold text-sm">RJ</span>
+            </div>
+            <span class="text-xs text-[#555] text-[11px]">Riya</span>
+          </div>
+
+          <div
+            class="flex flex-col items-center gap-2 cursor-pointer group transition-all duration-150 hover:-translate-y-1"
+          >
+            <div
+              class="w-12 h-12 rounded-full flex items-center justify-center bg-linear-to-br from-blue-500 to-blue-700 shrink-0 group-hover:scale-110 transition-transform duration-150 ring-2 ring-[#ff5a1f] ring-offset-2 ring-offset-white"
+            >
+              <span class="text-white font-bold text-sm">LO</span>
+            </div>
+            <span class="text-xs text-[#555] text-[11px]">Leon</span>
+          </div>
+        </div>
+
+        <!-- create post section -->
+        <div class="bg-(--card-color) rounded-xl p-4 space-y-3">
+          <div class="flex gap-3 items-center">
+            <div
+              class="w-10 h-10 rounded-full bg-linear-to-br from-red-500 to-red-700 flex items-center justify-center shrink-0"
+            >
+              <span class="text-white font-bold text-sm">JD</span>
+            </div>
+            <input
+              type="text"
+              placeholder="What's on your mind, John?"
+              class="w-full bg-[#EAF3FB] py-2 pr-4 pl-9 text-[#1a3a5c] border border-[#B5D4F4] rounded-3xl placeholder:text-[#1a3a5c] focus:bg-(--card-color) focus:ring-[#1a3a5c] hover:bg-[#dff0fb] hover:border-[#85b7eb] transition-all duration-150 outline-solid outline-1 outline-transparent focus:outline-[#1a3a5c]"
+            />
+          </div>
+
+          <!-- Divider -->
+          <div class="h-px bg-gray-100"></div>
+
+          <!-- Post Options -->
+          <div class="flex justify-around text-[#555]">
+            <div
+              class="flex items-center gap-2 rounded-sm cursor-pointer hover:bg-gray-100 transition-colors group flex-1 justify-center px-4 py-2"
+            >
+              <i class="fa-solid fa-video text-[#ff5a1f] text-lg"></i>
+              <span class="text-sm font-semibold">Live Video</span>
+            </div>
+            <div
+              class="flex items-center gap-2 rounded-sm cursor-pointer hover:bg-gray-100 transition-colors group flex-1 justify-center px-4 py-2"
+            >
+              <i class="fa-solid fa-image text-green-500 text-lg"></i>
+              <span class="text-sm font-semibold">Photo/Video</span>
+            </div>
+            <div
+              class="flex items-center gap-2 rounded-sm cursor-pointer hover:bg-gray-100 transition-colors group flex-1 justify-center px-4 py-2"
+            >
+              <i class="fa-solid fa-face-smile text-yellow-500 text-lg"></i>
+              <span class="text-sm font-semibold">Feeling</span>
+            </div>
+          </div>
+
+          <!-- filter tabs -->
+        </div>
+        <div class="flex gap-3 overflow-x-auto pb-2 font-semibold text-sm my-3">
+          <!-- All Tab (Active) -->
+          <button
+            class="px-6 py-2 bg-[#ff5a1f] text-white rounded-full font-semibold text-sm whitespace-nowrap hover:bg-[#ff6a2f] transition-all"
+          >
+            All
+          </button>
+
+          <!-- Other Tabs -->
+          <div class="filter-btn">Videos</div>
+
+          <div class="filter-btn">Photos</div>
+
+          <div class="filter-btn">Reels</div>
+
+          <div class="filter-btn">Trending</div>
+
+          <div class="filter-btn">Gaming</div>
+
+          <div class="filter-btn">Music</div>
+        </div>
+        <!-- post Card -->
+
+        <div class="bg-(--card-color) rounded-xl overflow-hidden">
+          <!-- Post Header -->
+          <div class="p-4">
+            <div class="flex gap-3 items-center justify-between mb-3 group">
+              <div class="flex gap-3 items-center">
+                <div
+                  class="w-10 h-10 rounded-full bg-linear-to-br from-purple-500 to-purple-700 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-150"
+                >
+                  <span class="text-white font-semibold text-sm">ZA</span>
+                </div>
+                <div class="flex flex-col items-start">
+                  <div class="flex flex-row gap-1 items-center">
+                    <p class="font-semibold text-sm text-[#555]">Zara Ahmed</p>
+                    <span class="text-gray-400 text-xs">·</span>
+                    <p class="text-xs text-gray-500">Photographer</p>
+                  </div>
+                  <div class="flex items-center gap-2 text-xs text-gray-500">
+                    <i class="fa-solid fa-clock text-gray-400"></i>
+                    <span>2 hours ago</span>
+                    <i class="fa-solid fa-earth-americas text-green-400"></i>
+                    <span class="text-orange-300 font-normal">Public</span>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-gray-600 h-8 w-8 bg-gray-100 rounded-full flex items-center justify-center group-hover:rotate-90 transition-all"
+              >
+                <i class="fa-solid fa-ellipsis"></i>
+              </button>
+            </div>
+
+            <!-- Post Caption -->
+            <p class="text-sm text-[#555] mb-3">
+              Golden hour hits different in the mountains ✨ Captured this last
+              evening during our trek. Nature never disappoints 📸
+              <span class="text-blue-500"
+                >#photography #mountains #goldenHour</span
+              >
+            </p>
+          </div>
+
+          <!-- Post images -->
+          <div class="grid grid-cols-2 gap-0 mb-0">
+            <img
+              src="https://images.unsplash.com/photo-1777446039915-96505c45ca99?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Post Image 1"
+              class="w-full h-64 object-cover"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Post Image 2"
+              class="w-full h-64 object-cover"
+            />
+          </div>
+
+          <!-- Reactions -->
+          <div
+            class="px-3 py-2 border-b border-gray-100 flex items-center justify-between"
+          >
+            <div class="flex items-center gap-1">
+              <span class="text-sm font-normal">❤️👍😂</span>
+              <span class="text-sm text-gray-400">2.4k reactions</span>
+            </div>
+            <div class="text-sm text-gray-400">
+              <span>186 comments</span>
+              <span class="mx-2">·</span>
+              <span>48 shares</span>
+            </div>
+          </div>
+
+          <!-- Post Actions -->
+          <div class="flex justify-around py-1">
+            <button class="post-action-btn">
+              <i class="fa-regular fa-heart"></i>
+              <span class="text-sm font-medium">Like</span>
+            </button>
+            <button class="post-action-btn">
+              <i class="fa-regular fa-comment"></i>
+              <span class="text-sm font-medium">Comment</span>
+            </button>
+            <button class="post-action-btn">
+              <i class="fa-solid fa-share"></i>
+              <span class="text-sm font-medium">Share</span>
+            </button>
+          </div>
+        </div>
       </div>
       <!-- right sidebar -->
       <div>
-        <h2 class="font-bold text-lg mb-2">right side</h2>
+        <div class="bg-(--card-color) rounded-lg">
+          <div class="p-2">
+            <!-- title -->
+            <h2 class="text[#555] font-semibold">People You May Know</h2>
+
+            <!-- users -->
+            <div class="gap-1 mt-3 flex flex-col w-full">
+              <div
+                class="w-full flex items-center p-2 justify-between cursor-pointer transition-all duration-150 hover:translate-x-1 hover:bg-[#f5f7fa]"
+              >
+                <div class="flex items-center gap-1">
+                  <div class="user-avatar bg-purple-500">ZA</div>
+                  <div>
+                    <p class="font-medium">Zara Ahmed</p>
+                    <p class="text-gray-400 text-sm">3 Mutual friends</p>
+                  </div>
+                </div>
+
+                <button class="follow-btn">Follow</button>
+              </div>
+              <div
+                class="w-full flex items-center p-2 justify-between cursor-pointer transition-all duration-150 hover:translate-x-1 hover:bg-[#f5f7fa]"
+              >
+                <div class="flex items-center gap-1">
+                  <div class="user-avatar bg-purple-500">ZA</div>
+                  <div>
+                    <p class="font-medium">Zara Ahmed</p>
+                    <p class="text-gray-400 text-sm">3 Mutual friends</p>
+                  </div>
+                </div>
+
+                <button class="follow-btn">Follow</button>
+              </div>
+              <div
+                class="w-full flex items-center p-2 justify-between cursor-pointer transition-all duration-150 hover:translate-x-1 hover:bg-[#f5f7fa]"
+              >
+                <div class="flex items-center gap-1">
+                  <div class="user-avatar bg-purple-500">ZA</div>
+                  <div>
+                    <p class="font-medium">Zara Ahmed</p>
+                    <p class="text-gray-400 text-sm">3 Mutual friends</p>
+                  </div>
+                </div>
+
+                <button class="follow-btn">Follow</button>
+              </div>
+              <div
+                class="w-full flex items-center p-2 justify-between cursor-pointer transition-all duration-150 hover:translate-x-1 hover:bg-[#f5f7fa]"
+              >
+                <div class="flex items-center gap-1">
+                  <div class="user-avatar bg-purple-500">ZA</div>
+                  <div>
+                    <p class="font-medium">Zara Ahmed</p>
+                    <p class="text-gray-400 text-sm">3 Mutual friends</p>
+                  </div>
+                </div>
+
+                <button class="follow-btn">Follow</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-(--card-color) rounded-lg mt-3">
+          <div class="p-2">
+            <h2 class="text[#555] font-semibold">Trending Topics</h2>
+            <!-- hashtags -->
+            <div class="flex gap-2 mt-3 flex-wrap">
+              <button class="hashtag-btn">#NaturePhotography</button>
+              <button class="hashtag-btn">#photo</button>
+              <button class="hashtag-btn">#Nature</button>
+              <button class="hashtag-btn">#html</button>
+              <button class="hashtag-btn">#css</button>
+              <button class="hashtag-btn">#NaturePhotography</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
