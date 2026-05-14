@@ -3,9 +3,9 @@ import {
   PRODUCT_TYPES,
   SPEC_OPTIONS,
   AVAILABLE_COLORS,
-} from "../../types/ProductData";
+} from "../../../types/ProductData";
 
-import { useAddProductForm } from "../../src/custom_hook/useAddProductForm";
+import { useAddProductForm } from "../../custom_hook/useAddProductForm";
 
 function AddProduct() {
   const {
@@ -17,6 +17,7 @@ function AddProduct() {
     handleSubmit,
   } = useAddProductForm();
 
+  
   return (
     <main className="min-h-screen">
       <h1 className="text-2xl font-bold mb-4">Add product</h1>

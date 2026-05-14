@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
-import signupImg from "../src/assets/signup_img.jpg";
+import signupImg from "../assets/signup_img.jpg";
 import { Link, useNavigate } from "react-router-dom";
-import type { UserData } from "../types/UserData";
-import AuthContext from "../src/context/AuthContext";
+import type { UserData } from "../../types/UserData";
+import AuthContext from "../context/AuthContext";
 
 type FormData = {
   id: string;

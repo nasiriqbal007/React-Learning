@@ -1,5 +1,5 @@
 import { NavLink, useNavigate, useSearchParams } from "react-router-dom";
-import { BRANDS } from "../types/ProductData";
+import { BRANDS } from "../../types/ProductData";
 import { useEffect } from "react";
 
 function SideNavbar({ onClose }: { onClose?: () => void }) {

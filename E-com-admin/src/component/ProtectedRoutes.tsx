@@ -8,10 +8,10 @@ import {
 import Footer from "./Footer";
 import { useState, useContext, useEffect } from "react";
 import Cart from "./Cart";
-import AuthContext from "../src/context/AuthContext";
-import { PRODUCT_TYPES, BRANDS } from "../types/ProductData";
+import AuthContext from "../context/AuthContext";
+import { PRODUCT_TYPES, BRANDS } from "../../types/ProductData";
 import SideNavbar from "./SideNavbar";
-import Drawer from "../src/utility/Drawer";
+import Drawer from "../utility/Drawer";
 
 function ProtectedRoutes() {
   const [searchParams] = useSearchParams();

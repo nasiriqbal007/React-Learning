@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { UserData } from "../../types/UserData";
+import type { UserData } from "../../../types/UserData";
 
 function Dashboard() {
   const [users, setUsers] = useState<UserData[]>(

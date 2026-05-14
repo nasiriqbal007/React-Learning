@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useContext, useState } from "react";
-import ProductContext from "../src/context/ProductContext";
+import ProductContext from "../context/ProductContext";
 
 type Cart = {
   id: string;

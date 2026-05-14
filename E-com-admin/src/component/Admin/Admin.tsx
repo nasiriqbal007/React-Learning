@@ -1,5 +1,5 @@
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import AuthContext from "../../src/context/AuthContext";
+import AuthContext from "../../context/AuthContext";
 import { useContext, useState } from "react";
 
 const linkClass = ({ isActive }: { isActive: boolean }) =>

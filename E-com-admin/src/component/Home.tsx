@@ -1,7 +1,7 @@
-import Card from "../component/Card";
+import Card from "./Card";
 import { useContext } from "react";
 import { useSearchParams } from "react-router-dom";
-import ProductContext from "../src/context/ProductContext";
+import ProductContext from "../context/ProductContext";
 
 function Home() {
   console.log("render home");

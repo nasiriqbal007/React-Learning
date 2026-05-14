@@ -1,7 +1,8 @@
 import { useContext, useState } from "react";
-import loginImg from "../src/assets/login_img.jpg";
+import loginImg from "../assets/login_img.jpg";
+
 import { Link, useNavigate } from "react-router-dom";
-import AuthContext from "../src/context/AuthContext";
+import AuthContext from "../context/AuthContext";
 
 type FormData = {
   email: string;
