@@ -13,14 +13,18 @@ function Products() {
     () => JSON.parse(localStorage.getItem("products") || "[]") as ProductData[],
   );
   const [page, setPage] = useState<number>(0);
-  const totalProducts = products.length;
+
+  const p = products.slice(0, 10);
+  const totalProducts = p.length;
   const PER_PAGE = 5;
+
   const offSet = page * PER_PAGE;
-  const pagination = products.slice(offSet, offSet + PER_PAGE);
-  const totalPages = Math.ceil(totalProducts / PER_PAGE);
+
+  const pagination = p.slice(offSet, offSet + PER_PAGE);
+  const totalPages = Math.ceil(p.length / PER_PAGE);
 
   const handleDelete = (id: string) => {
-    const deleteItem = products.filter((item) => item.id !== id);
+    const deleteItem = p.filter((item) => item.id !== id);
 
     setProducts(deleteItem);
     localStorage.setItem("products", JSON.stringify(deleteItem));
